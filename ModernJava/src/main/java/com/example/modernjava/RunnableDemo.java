@@ -1,8 +1,13 @@
 package com.example.modernjava;
 
+import com.example.modernjava.generics.Cat;
+import com.example.modernjava.generics.Pet;
+
 import java.io.File;
 import java.io.FilenameFilter;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class RunnableDemo {
     /*모던 자바 예제 1. Functional Interface 예제를 만들어보시오.
@@ -14,13 +19,13 @@ public class RunnableDemo {
     */
     public static void main(String[] args) {
         //무명의 이너 클래스를 이용할 경우
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                System.out.println(
-                        "inside runnable using an anonymous inner class");
-            }
-        }).start();
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                System.out.println(
+//                        "inside runnable using an anonymous inner class");
+//            }
+//        }).start();
 
 
         //람다 함수로 표현할 경우
@@ -30,15 +35,15 @@ public class RunnableDemo {
         //    "lambda expression implementing the run method");
         //new Thread(r).start();
 
-        File directory = new File("./src/main/java");
-
-        String[] names = directory.list(new FilenameFilter() {
-            @Override
-            public boolean accept(File dir, String name) {
-                return name.endsWith(".java");
-            }
-        });
-        System.out.println(Arrays.asList(names));
+//        File directory = new File("./src/main/java");
+//
+//        String[] names = directory.list(new FilenameFilter() {
+//            @Override
+//            public boolean accept(File dir, String name) {
+//                return name.endsWith(".java");
+//            }
+//        });
+//        System.out.println(Arrays.asList(names));
         /*
         File directory = new File("./src/main/java");
 
