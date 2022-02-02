@@ -17,6 +17,7 @@ class CatTest {
 //        pets.add(new Cat()); // won't compile
 //        pets.add(new Pet()); //won't compile
         cats.add(new Cat());
+        Pet p = pets.get(0); //Producer Extends, Consumer Super (PECS) principle coined by Joshua Bloch.
     }
 
 }
