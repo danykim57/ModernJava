@@ -8,7 +8,12 @@ public class Employee {
     String name;
     Date hireDate;
 
-    public Employee() {
+    public Employee(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
     }
 
     @Override
