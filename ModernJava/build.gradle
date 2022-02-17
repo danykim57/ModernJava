@@ -1,8 +1,10 @@
 plugins {
     id 'java'
+    id 'groovy'
+    id 'application'
 }
 
-group 'org.example'
+group 'org.dan'
 version '1.0-SNAPSHOT'
 
 repositories {
@@ -10,6 +12,7 @@ repositories {
 }
 
 dependencies {
+    groovy  'org.codehaus.groovy:groovy-all:2.5.9'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
 }
