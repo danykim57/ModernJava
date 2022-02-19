@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class JdbcPersonDAO implements PersonDAO{
-    private static final String DRIVER = "com.mysql.jdbc.Driver";
+    private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
     private static final String URL = "jdbc:mysql://localhost:3306/hr";
     private static final String USER = "jdbctest";
     private static final String PASSWORD = "12345";

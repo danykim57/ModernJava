@@ -1,4 +1,4 @@
-package newio;
+package com.example.modernjava.newio;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -26,7 +26,7 @@ public class FilesDemo {
         deleted = Files.deleteIfExists(Paths.get("sub1"));
 
         // Access a file, read it into a collection, and print
-        Path sourceDir = Paths.get("src", "main", "java", "newio");
+        Path sourceDir = Paths.get("src", "main", "java", "com/example/modernjava/newio");
         Path dataFile = sourceDir.resolve("data.txt");
         System.out.println(Files.lines(dataFile).collect(Collectors.toList()));
 
