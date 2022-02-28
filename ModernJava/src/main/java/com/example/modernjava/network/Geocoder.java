@@ -12,7 +12,8 @@ import java.util.stream.Collectors;
 
 public class Geocoder {
     //Add API key for getData func
-    private static final String BASE = "https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=YOUR_API_KEY";
+    private static final String BASE = "https://maps.googleapis.com/maps/api/geocode/json?";
+    private static final String KEY = "AIzaSyC6gniZOmB_8c-woj03IFbvkVborfY1jgY";
 
     private Function<String, String> encoder = s -> {
         try {
@@ -33,7 +34,7 @@ public class Geocoder {
         String encoded = encodeAddress(address);
         String response = "";
         try {
-            URL url = new URL(String.format("%saddress=%s", BASE, encoded));
+            URL url = new URL(String.format("%saddress=%s", BASE, encoded, KEY));
             try (BufferedReader br = new BufferedReader(
                     new InputStreamReader(url.openStream()))) {
                 String line = "";
