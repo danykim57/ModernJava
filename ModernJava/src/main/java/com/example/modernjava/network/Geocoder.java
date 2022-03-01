@@ -1,11 +1,11 @@
 package com.example.modernjava.network;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
+import javax.json.*;
+import java.io.*;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.util.Arrays;
 import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -47,4 +47,28 @@ public class Geocoder {
         }
         return response;
     }
+
+    public void fillInLatLng(Location location) {
+        String encoded = encodeAddress(
+                Arrays.asList(location.getStreet(), location.getCity(), location.getState()));
+        try {
+            URL url = new URL(String.format("%saddress=%s&key=%s", BASE, encoded, KEY));
+            try (InputStream is = url.openStream();
+                 JsonReader jr = Json.createReader(is)) {
+                JsonObject jo = jr.readObject();
+                JsonObject loc = jo.getJsonArray("results")
+                        .getJsonObject(0)
+                        .getJsonObject("geometry")
+                        .getJsonObject("location");
+                location.setLatitude(loc.getJsonNumber("lat").doubleValue());
+                location.setLongitude(loc.getJsonNumber("lng").doubleValue());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }
