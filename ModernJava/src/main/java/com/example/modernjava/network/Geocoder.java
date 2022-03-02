@@ -34,7 +34,7 @@ public class Geocoder {
         String encoded = encodeAddress(address);
         String response = "";
         try {
-            URL url = new URL(String.format("%saddress=%s", BASE, encoded, KEY));
+            URL url = new URL(String.format("%saddress=%s&key=%s", BASE, encoded, KEY));
             try (BufferedReader br = new BufferedReader(
                     new InputStreamReader(url.openStream()))) {
                 String line = "";
