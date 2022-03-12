@@ -4,7 +4,15 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class MyService {
-    public void doSomething() {
-        System.out.println("Bob, do something.");
+
+    private MyRepository repo;
+
+    public MyService(MyRepository repo) {
+        this.repo = repo;
+    }
+
+    public void doBusinessLogic() {
+        System.out.println("doing my business");
+        repo.doQuery();
     }
 }
