@@ -15,4 +15,12 @@ public class MyService {
         System.out.println("doing my business");
         repo.doQuery();
     }
+
+    public MyRepository getRepo() {
+        return repo;
+    }
+
+    public void setRepo(MyRepository repo) {
+        this.repo = repo;
+    }
 }
