@@ -1,10 +1,11 @@
 package com.dan.practice.demos.myapp;
 
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class MyService {
-
+    @Autowired
     private MyRepository repo;
 
     public MyService(MyRepository repo) {
@@ -14,13 +15,5 @@ public class MyService {
     public void doBusinessLogic() {
         System.out.println("doing my business");
         repo.doQuery();
-    }
-
-    public MyRepository getRepo() {
-        return repo;
-    }
-
-    public void setRepo(MyRepository repo) {
-        this.repo = repo;
     }
 }
