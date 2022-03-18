@@ -2,8 +2,8 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="service" class="com.dan.practice.demos.myapp.MyService">
+    <bean id="service" class="com.dan.practice.demos.myapp.business.MyService">
         <property name="repo" ref="repository"/>
     </bean>
-    <bean id="repository" class="com.dan.practice.demos.myapp.MyRepository"/>
+    <bean id="repository" class="com.dan.practice.demos.myapp.data.MyRepository"/>
 </beans>

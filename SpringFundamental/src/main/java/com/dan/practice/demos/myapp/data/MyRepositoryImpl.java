@@ -1,9 +1,10 @@
-package com.dan.practice.demos.myapp;
+package com.dan.practice.demos.myapp.data;
 
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class MyRepository {
+public class MyRepositoryImpl implements MyRepository {
+    @Override
     public void doQuery() {
         System.out.println("Doing DB thingy");
     }
