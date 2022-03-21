@@ -9,11 +9,8 @@ public class MyService {
     @Value("${my.name}")
     private String name;
 
-    private MyRepository repository;
     @Autowired
-    public MyService(MyRepository repository) {
-        this.repository = repository;
-    }
+    private MyRepository repository;
 
     public void doBusinessLogic() {
         System.out.println("Doing business logic for " + name);

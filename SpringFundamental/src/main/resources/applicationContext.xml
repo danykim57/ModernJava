@@ -4,5 +4,9 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
-    <context:component-scan base-package="com.dan.practice.demos.myapp"/>
+<!--    <context:property-placeholder location="classpath:application.properties"/>-->
+<!--    <bean id="service" class="com.dan.practice.demos.myapp.MyService">-->
+<!--        <property name="repository" ref="repository"/>-->
+<!--    </bean>-->
+<!--    <bean id="repository" class="com.dan.practice.demos.myapp.MyRepository"/>-->
 </beans>
