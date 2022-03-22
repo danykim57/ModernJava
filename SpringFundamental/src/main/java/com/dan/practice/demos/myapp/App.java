@@ -1,11 +1,15 @@
 package com.dan.practice.demos.myapp;
 
+import com.dan.practice.demos.myapp.config.DevelopmentConfig;
+import com.dan.practice.demos.myapp.config.ProductionConfig;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class App {
     public static void main(String[] args) {
-        ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+        System.setProperty("spring.profiles.active", "prod");
+
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(DevelopmentConfig.class, ProductionConfig.class);
         MyService service = ctx.getBean(MyService.class);
         service.doBusinessLogic();
     }
