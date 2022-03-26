@@ -8,6 +8,16 @@ public class Proxy implements Person{
     }
 
     public void greet() {
+        System.out.println("I just want to say...");
+        delegate.greet();
+    }
+
+    public void greetInFrench() {
+        intercept();
+    }
+
+    private void intercept() {
+        System.out.println("I just want to say...");
         delegate.greet();
     }
 }

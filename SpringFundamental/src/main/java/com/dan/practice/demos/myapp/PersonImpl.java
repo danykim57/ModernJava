@@ -4,4 +4,8 @@ public class PersonImpl implements Person{
     public void greet() {
         System.out.println("Hello, there");
     }
+
+    public void greetInFrench() {
+        System.out.println("Comment, Ça Va");
+    }
 }
