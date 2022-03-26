@@ -8,4 +8,9 @@ public class PersonImpl implements Person{
     public void greetInFrench() {
         System.out.println("Comment, Ça Va");
     }
+
+    @Override
+    public void greetInSpanish() {
+        System.out.println("Hola!");
+    }
 }
