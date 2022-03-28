@@ -1,14 +1,17 @@
 package com.dan.practice.demos.myapp;
 
+import org.springframework.aop.framework.ProxyFactoryBean;
+
 public class App {
     public static void main(String[] args) throws InterruptedException {
-        Person p =(Person) TimestampLoggingProxy.getProxyFor(new PersonImpl());
-        p.greet();
-        Thread.sleep(1000);
-        p.greet();
-        p.greet();
-        p.greetInFrench();
-        p.greetInSpanish();
+        IPerson p= new Person();
+
+        ProxyFactoryBean proxyFactory = new ProxyFactoryBean();
+        proxyFactory.setTarget(p);
+        Object proxy = proxyFactory.getObject();
+
+        IPerson bean = (IPerson) proxy;
+        bean.greet();
     }
 }
 

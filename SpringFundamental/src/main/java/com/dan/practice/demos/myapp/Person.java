@@ -1,7 +1,8 @@
 package com.dan.practice.demos.myapp;
 
-public interface Person {
-    void greet();
-    void greetInFrench();
-    void greetInSpanish();
+public class Person implements IPerson {
+    @Override
+    public void greet() {
+        System.out.println("Hello there!");
+    }
 }
