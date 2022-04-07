@@ -1,24 +1,26 @@
 package com.dan.practice.demos.myapp;
 
+import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
-
 @Service
-public class EmployeeService {
+public class EmployeeService implements ApplicationContextAware {
+
+    EmployeeRepository repository;
 
     @Autowired
-    private EmployeeRepository repository;
-
-    @PostConstruct
-    public void afterPropertiesSet() throws Exception {
-        repository.loadData();
+    public EmployeeService(EmployeeRepository repository) {
+        this.repository = repository;
     }
 
-    @PreDestroy
-    public void destroy() throws Exception {
-        System.out.println("Destryoing the EmployeeService bean...");
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        //To use Bean we can do this
+        //applicationContext.getBean();
+        System.out.println("Here is the app context: " + applicationContext);
     }
+
 }
